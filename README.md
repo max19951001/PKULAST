@@ -4,7 +4,7 @@
 [![PyPI package](https://badge.fury.io/py/pkulast.svg)](http://python.org/pypi/pkulast)
 
 __pkulast__ is a Python module capable of retrieving land surface temperature (LST) from thermal infrared remote sensing data. It is built on-top of various scientific Python packages
-([numpy](http://www.numpy.org/), [scipy](https://www.scipy.org/), etc.). With the help of __pkulast__, You can obtain algorithm coefficients of an existing LST retrieval algorithm for specific TIR sensors, or create a novel form of algorithm for new TIR sensor prototypes from scratch). 
+([numpy](http://www.numpy.org/), [scipy](https://www.scipy.org/), etc.). With the help of __pkulast__, you can obtain algorithm coefficients of an existing LST retrieval algorithm for specific TIR sensors, or create a novel form of algorithm for new TIR sensor prototypes from scratch). 
 
 - __Website:__ [PKULAST](http://github.com/tirzhu/pkulast)
 - __Documentation:__ [PKULAST Documentation](http://readthedocs.com/pkulast)(TBD)
