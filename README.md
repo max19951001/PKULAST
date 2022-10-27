@@ -1,7 +1,7 @@
 # PKU LAnd Surface Temperature(PKULAST)
 
-[![Github Actions Status](https://github.com/tirzhu/pkulast/workflows/Install%20and%20Test/badge.svg)](https://github.com/hexlet-boilerplates/python-package/actions)
-[![PyPI package](https://badge.fury.io/py/pygrib.svg)](http://python.org/pypi/pkulast)
+[![Build](https://github.com/tirzhu/PKULAST/actions/workflows/build.yml/badge.svg)](https://github.com/tirzhu/PKULAST/actions/workflows/build.yml)
+[![PyPI package](https://badge.fury.io/py/pkulast.svg)](http://python.org/pypi/pkulast)
 
 __pkulast__ is a Python module capable of retrieving land surface temperature (LST) from thermal infrared remote sensing data. It is built on-top of various scientific Python packages
 ([numpy](http://www.numpy.org/), [scipy](https://www.scipy.org/), etc.). With the help of __pkulast__, You can obtain algorithm coefficients of an existing LST retrieval algorithm for specific TIR sensors, or create a novel form of algorithm for new TIR sensor prototypes from scratch). 
