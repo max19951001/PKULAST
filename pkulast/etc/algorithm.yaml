@@ -1,0 +1,224 @@
+SC:
+    RTE:
+        requirements: [e, tau, Lu, Ld]
+        optimized_target:
+            tLST: []
+        optimized_params:
+            fit_intercept: False
+        formula: 0
+    Qin01:
+        requirements: [e, tau, Ta]
+        optimized_target:
+            ttau: ['w', ]
+        post_expr:
+            C: e*tau
+            D: (1-tau)*(1+(1-e)*tau)
+        optimized_params:
+            fit_intercept: True
+        formula: (C*T+D*T - D*Ta) / C + (1 - C - D) / C * a + (1-C-D) * T / C * b
+    JM09:
+        requirements: [e, w, L]
+        pre_expr:
+            gamma: T*T / blambda / L
+            sigma: T - T*T / blambda
+            tAF1: 1 / tau
+            tAF2: 0 - Ld - Lu / tau
+            tAF3: Ld 
+        optimized_target:
+            tAF1: ['w * w', 'w']
+            tAF2: ['w * w', 'w']
+            tAF3: ['w * w', 'w']
+        optimized_params:
+            fit_intercept: True
+        formula: ((pAF1 * L + pAF2) / e + pAF3) * gamma + sigma
+    CR18:
+        requirements: [e, w, Ta, L]
+        pre_expr:
+            gamma: T*T / blambda / L
+            sigma: T - T * T / blambda
+            tAF1: 1 / tau
+            tAF2: 0 - Ld - Lu / tau
+            tAF3: Ld 
+        optimized_target:
+            tAF1: ['Ta*Ta*w*w', 'Ta*w*w', 'Ta*w', 'Ta*Ta*w', 'Ta', 'w' , "Ta * Ta", 'w * w']
+            tAF2: ['Ta*Ta*w*w', 'Ta*w*w', 'Ta*w', 'Ta*Ta*w', 'Ta', 'w' , "Ta * Ta", 'w * w']
+            tAF3: ['Ta*Ta*w*w', 'Ta*w*w', 'Ta*w', 'Ta*Ta*w', 'Ta', 'w' , "Ta * Ta", 'w * w']
+        optimized_params:
+            fit_intercept: True
+        formula: ((pAF1 * L + pAF2) / e + pAF3) * gamma + sigma
+SW:
+    OV92:
+        requirements: []
+        optimized_target:
+            tLST: [ 'T11', 'dT']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    FO96:
+        requirements: []
+        optimized_target:
+            tLST: [ 'T11', 'dT', 'dT * dT']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    PR84:
+        requirements: [e, ]
+        optimized_target:
+            tLST: [ 'T11', 'dT', 'T11*e11', 'dT*(1-e11)', 'T12*de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    UC85:
+        requirements: [e, ]
+        optimized_target:
+            tLST: [ 'T11', 'dT', '1-e']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    BL90:
+        requirements: [e, ]
+        optimized_target:
+            tLST: [ '(T11+T12)/2', '(1-e) / e * (T11+T12)/2', 'de/(e * e) *(T11 + T12)/2', dT/2, (1-e)/e *dT/2, de/(e * e) * dT/2]
+        optimized_params:
+            fit_intercept: True
+        formula: pLST    
+    PP91:
+        requirements: [e, ]
+        pre_expr:
+            constant: T0
+        optimized_target:
+            tLST: [ '(T11 - T0) / e11', '(T12 - T0) / e12, (1-e11) / e11']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    VI91:
+        requirements: [e, ]
+        optimized_target:
+            tLST: [ 'T11', 'dT', '(1-e)/e', 'de/e']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    SO93:
+        requirements: [e, ]
+        optimized_target:
+            tLST: ['T11', 'dT', 'dT*dT', '1-e', 'de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+        reference: 10.1007/BF02524225
+    UL94:
+        requirements: [e, ]
+        optimized_target:
+            tLST: [ 'T11', 'dT', '1-e', 'de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    RO14:
+        requirements: [e, w, a, b]
+        optimized_target:
+            ttau11: ['w', ]
+            ttau12: ['w', ]
+        optimized_params:
+            fit_intercept: True
+        post_expr:
+            C11: e11*ptau11
+            D11: (1-ptau11)*(1+(1-e11)*ptau11)
+            C12: e12*ptau12
+            D12: (1-ptau12)*(1+(1-e12)*ptau12)
+            E0: D12*C11 - D11*C12
+            E1: D12*(1-C11-D11)/E0
+            E2: D11*(1-C12-D12)/E0
+            A: D11/E0
+            f0: A
+            f1: E1
+            f2: E2
+        formula:  T11 + f0 * (T11 - T12) + f1*a11 + f2*a12 + f1* b11 * T11 + 0 - f2 * b12*T12
+    Wan14:
+        requirements: [e, ]
+        optimized_target:
+            tLST: [ '(T11+T12)/2', '(1-e) / e * (T11+T12) / 2', 'de/(e * e) *(T11 + T12) / 2', 'dT / 2', '(1-e)/e *dT / 2', 'de/(e * e) * dT / 2', 'dT * dT']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    Enterprise:
+        requirements: [e, ]
+        optimized_target:
+            tLST: ['T11', 'dT', 'e', 'e*dT', 'de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    FO96w:
+        requirements: [w, ]
+        optimized_target:
+            tLST: [ 'w*T11', 'w*w*T11', 'T11', 'w*T12', 'w*w*T12', 'T12', 'w', 'w*w']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    SO91w:
+        requirements: [e, w,]
+        optimized_target:
+            tLST: [ 'T11', 'w*dT', 'dT', 'w*(1-e11)*dT', '(1-e11)*dT', 'w*de*dT', 'de * dT', '(1-e11)/e11 * T11 *w', '(1-e11)/e11*T11', '(1-e11)/e11 * T11 *w*de', '(1-e11)/e11 * T11 *de', '(1-e12)/e12 * T12 *w', '(1-e12)/e12*T12', '(1-e12)/e12 * T12 *w*de', '(1-e12)/e12 * T12 *de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    UL94w:
+        requirements: [e, w,]
+        optimized_target:
+            tLST: [ 'T11', 'w * dT', 'dT', 'w * (1- e)', '1-e', 'w * de', 'de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    CO94w:
+        requirements: [e, w,]
+        optimized_target:
+            tLST: [ 'T11', 'dT', 'dT * dT', 'w * T11 *(1-e)', 'T11*(1-e)', 'w *(1-e)', '1-e', 'w * T11*de', 'T11*de', 'w*de', 'de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    SO00w:
+        requirements: [e, w,]
+        optimized_target:
+            tLST: [ 'T11', 'dT', 'dT*dT', 'w*(1-e)', '1-e', 'w*de', 'de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    MT02w:
+        requirements: [e, w,]
+        optimized_target:
+            tLST: [ 'T11', 'dT', 'dT *dT', 'w*(1-e)', '1-e']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    BL95w:
+        requirements: [e, w, mu]
+        optimized_target:
+            tLST: [ 'w', '(T11+T12)', 'w*mu*(1-e11)*(T11+T12)', '(1-e11)*(T11+T12)', 'w*de*(T11+T12)', 'de*(T11+T12)', 'dT','w*mu*(1-e11)*dT', '(1-e11)*dT', 'w*de*dT', 'de*dT']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+    JM08w:
+        requirements: [e, w,]
+        pre_expr:
+            constant: T11
+        optimized_target:
+            tLST: ['dT', 'dT * dT', '(1-e)', 'w*(1-e)', 'de', 'w*de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+        reference: 10.1109/LGRS.2008.2001636
+    JM08w2:
+        requirements: [e, w,]
+        optimized_target:
+            tLST: ['T11', 'dT', 'dT * dT', '(1-e)', 'w*(1-e)', 'de', 'w*de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+        reference: 10.1109/LGRS.2008.2001636
+    GA08w:
+        requirements: [e, w,]
+        optimized_target:
+            tLST: [ 'T11', 'dT', 'dT * dT', '(1-e)', 'w*(1-e)', 'w*w*(1-e)', 'de', 'w*de']
+        optimized_params:
+            fit_intercept: True
+        formula: pLST
+        reference: 10.1109/TGRS.2008.916084

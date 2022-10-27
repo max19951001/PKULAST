@@ -1,0 +1,10 @@
+# directory to extra folder
+# extra: '/path/to/extra'
+# extra: '/gpfs/share/home/1901110542/extra/'
+extra: 'e:/extra/'
+rsr_dir: 'e:/extra/sensor/'
+# extra: '/opt/extra/'
+# rsr_dir: '/opt/extra/sensor/'
+download_from_internet: false
+ucar_username: 'zhujinshun@pku.edu.cn'
+ucar_password: 'tgXLXp5yA#.egqF'

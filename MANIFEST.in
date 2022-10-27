@@ -1,0 +1,8 @@
+include MANIFEST.in
+include README.md
+global-include *.yaml
+global-include *.yml
+global-exclude *.grb2
+global-exclude *.FLT
+global-exclude *.flt
+global-exclude *.aux.xml

@@ -1,0 +1,112 @@
+NWP_PROFILE:
+  GFS:
+    url: 'https://www.ncei.noaa.gov/data/global-forecast-system/access/grid-004-0.5-degree/analysis/'
+    resolution_lon: 0.5 # degree
+    resolution_lat: 0.5 # degree
+    resolution_t: 6 # hours
+    resolution_v: 31
+    duration: '2007-present'
+    source: 'reanalysis'
+    unit: 'deg'
+  GDAS:
+    url: 'https://rda.ucar.edu/datasets/ds083.2/'
+    resolution_lon: 1
+    resolution_lat: 1
+    resolution_t: 6
+    resolution_v: 26
+    duration: '1999 to present'
+    source: 'reanalysis'
+    unit: 'deg'
+  GDAS25:
+    url: 'https://rda.ucar.edu/datasets/ds083.3/'
+    resolution_lon: 0.25
+    resolution_lat: 0.25
+    resolution_t: 6
+    resolution_v: 26
+    duration: '2015-07-08 to present'
+    source: 'reanalysis'
+    unit: 'deg'
+  DOE:
+    url: 'https://rda.ucar.edu/datasets/ds091.0/'
+    resolution_lon: 2.5
+    resolution_lat: 2.5
+    resolution_t: 6
+    resolution_v: 17
+    duration: '1979 to present'
+    source: 'reanalysis'
+    unit: 'deg'
+  ERA-Interim:
+    url: 'https://apps.ecmwf.int/datasets/data/interim-full-daily/'
+    resolution_lon: 0.125
+    resolution_lat: 0.125
+    resolution_t: 6
+    resolution_v: 37
+    duration: 'Jan 1979 to Aug 2019'
+    source: 'reanalysis'
+    unit: 'deg'
+  ERA5:
+    url: 'https://cds.climate.copernicus.eu/cdsapp#!/dataset/10.24381/cds.bd0915c6?tab=form'
+    resolution_lon: 0.25
+    resolution_lat: 0.25
+    resolution_t: 1
+    resolution_v: 37
+    duration: '1979 to present'
+    source: 'reanalysis'
+    unit: 'deg'
+  GEOS-FP:
+    url: 'https://portal.nccs.nasa.gov/datashare/gmao/geos-fp/das/'
+    resolution_lon: 0.3
+    resolution_lat: 0.25
+    resolution_t: 3
+    resolution_v: 42
+    duration: '2014.2.20 to present'
+    source: 'reanalysis'
+    unit: 'deg'
+  JRA55:
+    url: 'https://rda.ucar.edu/datasets/ds628.0/'
+    resolution_lon: 1.25
+    resolution_lat: 1.25
+    resolution_t: 6
+    resolution_v: 37
+    duration: '1957 to present'
+    source: 'reanalysis'
+    unit: 'deg'
+  MERRA2:
+    url: 'https://disc.gsfc.nasa.gov'
+    resolution_lon: 0.625
+    resolution_lat: 0.5
+    resolution_t: 3
+    resolution_v: 42
+    duration: '1980 to present'
+    source: 'reanalysis'
+    unit: 'deg'
+  MODIS:
+    url: 'https://ladsweb.modaps.eosdis.nasa.gov/search/'
+    resolution_lon: 5
+    resolution_lat: 5
+    resolution_t: 48
+    resolution_v: 20
+    duration: '2000 to present'
+    source: 'satellite derived'
+    unit: 'km'
+  AIRS:
+    url: 'https://search.earthdata.nasa.gov/'
+    resolution_lon: 1
+    resolution_lat: 1
+    resolution_t: 48
+    resolution_v: 24
+    duration: '2002 to present'
+    source: 'satellite derived'
+    unit: 'deg'
+  UWYO:
+    url: 'http://weather.uwyo.edu/upperair/sounding.html'
+    resolution_lon: null
+    resolution_lat: null
+    resolution_t: 48
+    resolution_v: null
+    duration: '1973 to present'
+    source: 'radio sounding'
+    unit: null
+
+
+

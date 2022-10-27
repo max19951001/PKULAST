@@ -1,14 +1,10 @@
 # PKU LAnd Surface Temperature(PKULAST)
 
-[![Github Actions Status](https://github.com/hexlet-boilerplates/python-package/workflows/Python%20CI/badge.svg)](https://github.com/hexlet-boilerplates/python-package/actions)
-[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
-[![Maintainability](https://api.codeclimate.com/v1/badges/df66c0cbbeca7d822f23/maintainability)](https://codeclimate.com/github/hexlet-boilerplates/python-package/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/df66c0cbbeca7d822f23/test_coverage)](https://codeclimate.com/github/hexlet-boilerplates/python-package/test_coverage)
+[![Github Actions Status](https://github.com/tirzhu/pkulast/workflows/Install%20and%20Test/badge.svg)](https://github.com/hexlet-boilerplates/python-package/actions)
+[![PyPI package](https://badge.fury.io/py/pygrib.svg)](http://python.org/pypi/pkulast)
 
-
-
-__pkulast__ is a Python module capable of retrieving land surface temperature from thermal infrared remote sensing data. It is built on-top of various scientific Python packages
-([numpy](http://www.numpy.org/), [scipy](https://www.scipy.org/)).
+__pkulast__ is a Python module capable of retrieving land surface temperature (LST) from thermal infrared remote sensing data. It is built on-top of various scientific Python packages
+([numpy](http://www.numpy.org/), [scipy](https://www.scipy.org/), etc.). With the help of __pkulast__, You can obtain algorithm coefficients of an existing LST retrieval algorithm for specific TIR sensors, or create a novel form of algorithm for new TIR sensor prototypes from scratch). 
 
 - __Website:__ [PKULAST](http://github.com/tirzhu/pkulast)
 - __Documentation:__ [PKULAST Documentation](http://readthedocs.com/pkulast)(TBD)
@@ -16,9 +12,9 @@ __pkulast__ is a Python module capable of retrieving land surface temperature fr
 
 ## Features
 
-- __Native Python implementation.__ A native Python implementation for a variety of land surface temperature retrieval algorithms. To see the list of all supported algorithms, check this [link](http://scikit.ml/#classifiers).
+- __Native Python implementation.__ A native Python implementation for a variety of land surface temperature retrieval algorithms. To see the list of all supported algorithms, check this [link](http://readthedocs.com/pkulast).
 
-- __Interface to MODTRAN.__ A MODTRAN wrapper class is implemented for reference purposes and integration. This provides access to atmospheric radiative transfer simulation &mdash; the reference standard in the field.
+- __Interface to MODTRAN.__ A MODTRAN wrapper class is implemented for reference purposes and integration. This provides access to atmospheric radiative transfer simulation &mdash;.
 - __Conceptual Models.__ A conceptual forward model to simulate the top of atmosphere radiance; and inverse model to retrieve and validate land surface temperature.
 
 
@@ -30,10 +26,14 @@ In most cases you will want to follow the requirements defined in the requiremen
 ```
 scipy
 numpy
+satpy
+metpy
+pandas
+pygrib
 ...
 ```
 
-Note: Installing pygrib is complicated, please see: [pygrib install instructions](https://git.skewed.de/count0/graph-tool/wikis/installation-instructions)
+Note: Installing pygrib is complicated, please see: [pygrib install instructions using conda](https://anaconda.org/conda-forge/pygrib)
 
 ## Installation
 
@@ -68,15 +68,17 @@ in your fork, open up an issue, and make a Pull Request!
 ## Cite
 
 If you used __pkulast__ in your research or project, please
-cite [our work](https://doi.org/xxxx.xxxx):
-
+cite [our work](https://doi.org/10.1109/JSTARS.2022.3217105):
 ```bibtex
 @ARTICLE{2022pkulast,
-   author = {{Zhu}, J.},
-   title = "{PKU LAnd Surface Temperature(PKULAST)}",
-   publisher = {GitHub},
-   journal = {GitHub repository},
+   author = {Zhu, Jinshun and Ren, Huazhong and Ye, Xin and Teng, Yuanjian and Zeng, Hui and Liu, Yu and Fan, Wenjie},
+   title = "{PKULAST-An Extendable Model for Land Surface Temperature Retrieval from Thermal Infrared Remote Sensing Data}",
+   publisher = {IEEE Xplore},
+   journal = {IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+   pages = {1--17},
+   issn = {2151-1535},
+   doi = {10.1109/JSTARS.2022.3217105},
    year = 2022,
-   month = feb
+   month = oct
 }
 ```
